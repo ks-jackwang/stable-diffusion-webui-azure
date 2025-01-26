@@ -2,7 +2,7 @@
 
 ## TL;DR
 
-### [Deploy to Azure](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2ks-jackwang%2Fstable-diffusion-webui-azure%2Fmain%2Ftemplate.json)
+### [Deploy to Azure](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fks-jackwang%2Fstable-diffusion-webui-azure%2Fmain%2Ftemplate.json)
 
 This repository contains a script and an Azure Resource Manager (ARM) template to deploy a virtual machine (VM) with the Stable Diffusion Web UI. The script installs all necessary dependencies and sets up the environment for the Stable Diffusion Web UI, while the ARM template provisions the VM and executes the script.
 

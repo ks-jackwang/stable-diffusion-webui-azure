@@ -79,7 +79,7 @@
       ],
       "properties": {
         "hardwareProfile": {
-          "vmSize": "Standard_NC8as_T4_v3"
+          "vmSize": "Standard_NC24ads_A100_v4"
         },
         "osProfile": {
           "computerName": "[parameters('vmName')]",

@@ -79,7 +79,7 @@
       ],
       "properties": {
         "hardwareProfile": {
-          "vmSize": "Standard_NC8as_T4_v3"
+          "vmSize": "Standard_NC64as_T4_v3"
         },
         "osProfile": {
           "computerName": "[parameters('vmName')]",
@@ -98,7 +98,7 @@
           },
           "osDisk": {
             "createOption": "FromImage",
-            "diskSizeGB": 512
+            "diskSizeGB": 1024
           }
         },
         "networkProfile": {
@@ -113,26 +113,6 @@
         },
         "priority": "Spot"
       }
-    },
-    {
-      "type": "Microsoft.Compute/virtualMachines/extensions",
-      "apiVersion": "2021-03-01",
-      "name": "[concat(parameters('vmName'), '/CustomScriptExtension')]",
-      "location": "[parameters('location')]",
-      "properties": {
-        "publisher": "Microsoft.Azure.Extensions",
-        "type": "CustomScript",
-        "typeHandlerVersion": "2.1",
-        "settings": {
-          "fileUris": [
-            "https://raw.githubusercontent.com/theonemule/stable-diffusion-webui-azure/main/install.sh"
-          ],
-          "commandToExecute": "[concat('bash install.sh ', parameters('adminUsername'))]"
-        }
-      },
-      "dependsOn": [
-        "[resourceId('Microsoft.Compute/virtualMachines', parameters('vmName'))]"
-      ]
     },
     {
       "type": "Microsoft.Network/networkSecurityGroups",

@@ -125,7 +125,7 @@
         "typeHandlerVersion": "2.1",
         "settings": {
           "fileUris": [
-            "https://raw.githubusercontent.com/theonemule/stable-diffusion-webui-azure/main/install.sh"
+            "https://raw.githubusercontent.com/ks-jackwang/stable-diffusion-webui-azure/main/install.sh"
           ],
           "commandToExecute": "[concat('bash install.sh ', parameters('adminUsername'))]"
         }

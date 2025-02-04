@@ -1,8 +1,7 @@
 #!/bin/bash
 
 # Assign the first parameter to ACTIVEUSER
-ACTIVEUSER=$1
-token=$2
+token=$1
 
 # Set echo on
 set -x

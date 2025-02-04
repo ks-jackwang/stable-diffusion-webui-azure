@@ -10,7 +10,7 @@ export NEEDRESTART_MODE=a
 #install Anaconda
 cd /home/$ACTIVEUSER
 wget https://repo.anaconda.com/archive/Anaconda3-2024.10-1-Linux-x86_64.sh
-bash ./Anaconda3-2024.10-1-Linux-x86_64.sh -b -p /anaconda3
+sudo bash ./Anaconda3-2024.10-1-Linux-x86_64.sh -b -p /anaconda3
 sudo chown -R $ACTIVEUSER:$ACTIVEUSER /anaconda3
 sudo chmod 777 -R /anaconda3
 source /anaconda3/bin/activate

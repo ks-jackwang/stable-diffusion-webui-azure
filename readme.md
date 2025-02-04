@@ -12,6 +12,8 @@
 
 ### [Deploy to Azure NC24ads A100 v4 24 Core GPU 220G RAM USD 471.91/month](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fks-jackwang%2Fstable-diffusion-webui-azure%2Fmain%2Ftemplate-NC24ads.json)
 
+### [Deploy to Azure NC24ads A100 v4 24 Core GPU 220G RAM USD 471.91/month][with webui](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fks-jackwang%2Fstable-diffusion-webui-azure%2Fmain%2Ftemplate-NC24ads-withwebui.json)
+
 ### [Deploy to Azure NC48ads A100 v4 48 Core GPU 440G RAM USD 943.81/month](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fks-jackwang%2Fstable-diffusion-webui-azure%2Fmain%2Ftemplate-NC48ads.json)
 
 ### [Deploy to Azure NC96ads A100 v4 96 Core GPU 880G RAM USD 1887.63/month](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fks-jackwang%2Fstable-diffusion-webui-azure%2Fmain%2Ftemplate-NC96ads.json)

@@ -16,8 +16,10 @@ su -c "git clone https://github.com/comfyanonymous/ComfyUI.git" $ACTIVEUSER
 # Create a virtual environment and install requirements
 su -c "python3 -m venv /github/ComfyUI/venv && \
 source /github/ComfyUI/venv/bin/activate && \
-pip install --pre torch torchvision torchaudio --index-url https://download.pytorch.org/whl/nightly/cu126 && \
+pip install torch torchvision torchaudio --extra-index-url https://download.pytorch.org/whl/cu126 && \
 pip install -r /github/ComfyUI/requirements.txt" $ACTIVEUSER
+
+# pip install --pre torch torchvision torchaudio --index-url https://download.pytorch.org/whl/nightly/cu126 && \
 
 # Create the systemd service file default port 8188
 sudo cat <<EOF > /etc/systemd/system/ComfyUI.service
@@ -38,7 +40,7 @@ WantedBy=multi-user.target
 EOF
  
 # Reload systemd daemon and enable the service
-sudo systemctl daemon-reload
-sudo systemctl enable stable-diffusion-webui.service
+systemctl daemon-reload
+systemctl enable stable-diffusion-webui.service
 
-sudo reboot
+# reboot

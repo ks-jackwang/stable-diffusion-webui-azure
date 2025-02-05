@@ -59,7 +59,9 @@
           {
             "name": "default",
             "properties": {
-              "addressPrefix": "10.0.0.0/24"
+              "addressPrefix": "10.0.0.0/24",
+              "networkSecurityGroup": {
+                "id": "[resourceId('Microsoft.Network/networkSecurityGroups', concat(parameters('vmName'), '-nsg'))]"
             }
           }
         ]
@@ -153,6 +155,19 @@
               "sourcePortRange": "*",
               "destinationAddressPrefix": "*",
               "destinationPortRange": "22"
+            }
+          },
+          {
+            "name": "AllowRDP",
+            "properties": {
+              "priority": 1001,
+              "protocol": "Tcp",
+              "access": "Allow",
+              "direction": "Inbound",
+              "sourceAddressPrefix": "*",
+              "sourcePortRange": "*",
+              "destinationAddressPrefix": "*",
+              "destinationPortRange": "3389"
             }
           }
         ]

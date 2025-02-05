@@ -1,19 +1,21 @@
 #!/bin/bash
 
 # Assign the first parameter to ACTIVEUSER
-token=$1
+huggingfacetoken=$1
+civitaitoken=$2
 
 # Set echo on
 set -x
 export NEEDRESTART_MODE=a 
 
-eval "$(/anaconda3/bin/conda shell.bash hook)"
-conda activate comfyui
+# eval "$(/anaconda3/bin/conda shell.bash hook)"
+# conda activate comfyui
+source /github/ComfyUI/venv/bin/activate
 pip install -U "huggingface_hub[cli]"
 
 # download the models from Huggingface
 cd /github/ComfyUI
-huggingface-cli login  --token $token --add-to-git-credential
+huggingface-cli login  --token $huggingfacetoken --add-to-git-credential
 
 #download stable-diffusion-3.5-large
 # [checkpoints] 
@@ -32,10 +34,10 @@ huggingface-cli logout
 # download Pony Realism
 # [checkpoints]
 cd /github/ComfyUI/models/checkpoints
-wget “https://civitai.com/api/download/models/914390?type=Model&format=SafeTensor&size=full&fp=fp16&token=$token”
+wget “https://civitai.com/api/download/models/914390?type=Model&format=SafeTensor&size=full&fp=fp16&token=$civitaitoke”
 
 # download Pony Realism
 # Realism cinematic photographic style F1D
 # Fooocus
 
-conda deactivate
+# conda deactivate

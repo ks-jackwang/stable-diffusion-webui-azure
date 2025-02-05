@@ -16,7 +16,6 @@ su -c "git clone https://github.com/comfyanonymous/ComfyUI.git" $ACTIVEUSER
 # Create a virtual environment and install requirements
 su -c "python3 -m venv /github/ComfyUI/venv && \
 source /github/ComfyUI/venv/bin/activate && \
-pip config set global.index-url https://pypi.tuna.tsinghua.edu.cn/simpl && \
 pip install --pre torch torchvision torchaudio --index-url https://download.pytorch.org/whl/nightly/cu126 && \
 pip install -r /github/ComfyUI/requirements.txt" $ACTIVEUSER
 

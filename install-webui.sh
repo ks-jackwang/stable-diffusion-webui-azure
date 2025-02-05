@@ -54,4 +54,4 @@ EOF
 systemctl daemon-reload
 systemctl enable stable-diffusion-webui.service
 
-reboot
+#reboot

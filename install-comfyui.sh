@@ -5,7 +5,11 @@ ACTIVEUSER=$1
 
 # Set echo on
 set -x
-export NEEDRESTART_MODE=a 
+export NEEDRESTART_MODE=a
+
+# Update and install necessary packages
+apt update
+apt upgrade -y
 
 # Set up the ComfyuI
 cd /github

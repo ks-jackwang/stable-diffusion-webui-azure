@@ -45,6 +45,6 @@ EOF
  
 # Reload systemd daemon and enable the service
 systemctl daemon-reload
-systemctl enable stable-diffusion-webui.service
+systemctl enable ComfyUI.service
 
 # reboot

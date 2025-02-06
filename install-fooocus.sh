@@ -13,31 +13,31 @@ apt upgrade -y
 
 # Set up the ComfyuI
 cd /github
-mkdir ComfyUI
-chown $ACTIVEUSER:$ACTIVEUSER ComfyUI
-su -c "git clone https://github.com/comfyanonymous/ComfyUI.git" $ACTIVEUSER
+mkdir Fooocu
+chown $ACTIVEUSER:$ACTIVEUSER Fooocu
+su -c "git clone https://github.com/lllyasviel/Fooocus.git" $ACTIVEUSER
 
 # Create a virtual environment and install requirements
-su -c "python3 -m venv /github/ComfyUI/venv && \
-source /github/ComfyUI/venv/bin/activate && \
+su -c "python3 -m venv /github/Fooocu/venv && \
+source /github/Fooocu/venv/bin/activate && \
 pip install --pre torch torchvision torchaudio --index-url https://download.pytorch.org/whl/nightly/cu126 && \
-pip install -r /github/ComfyUI/requirements.txt" $ACTIVEUSER
+pip install -r /github/ComfyUI/requirements_versions.txt" $ACTIVEUSER
 
 # pip install torch torchvision torchaudio --extra-index-url https://download.pytorch.org/whl/cu126 && \
 
 # Create the systemd service file default port 8188
-sudo cat <<EOF > /etc/systemd/system/ComfyUI.service
+sudo cat <<EOF > /etc/systemd/system/Fooocu.service
 [Unit]
-Description=ComfyUI
+Description=Fooocu
 After=network.target
 
 [Service]
 User=$ACTIVEUSER
 Group=$ACTIVEUSER
-WorkingDirectory=/github/ComfyUI
-ExecStart=/github/ComfyUI/venv/bin/python main.py --port 8188
+WorkingDirectory=/github/Fooocu
+ExecStart=/github/Fooocu/venv/bin/python entry_with_update.py --listen
 Restart=always
-Environment="PATH=/github/ComfyUI/venv/bin:/usr/bin:/usr/local/bin"
+Environment="PATH=/github/Fooocu/venv/bin:/usr/bin:/usr/local/bin"
 
 [Install]
 WantedBy=multi-user.target
@@ -45,7 +45,6 @@ EOF
  
 # Reload systemd daemon and enable the service
 systemctl daemon-reload
-systemctl enable ComfyUI.service
-sudo systemctl start ComfyUI.service
-
+systemctl enable Fooocu.service
+sudo systemctl start Fooocu.service
 # reboot

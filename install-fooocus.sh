@@ -1,4 +1,5 @@
 #!/bin/bash
+# use sudo to run this script
 
 # Assign the first parameter to ACTIVEUSER
 ACTIVEUSER=$1
@@ -46,5 +47,6 @@ EOF
 # Reload systemd daemon and enable the service
 systemctl daemon-reload
 systemctl enable Fooocu.service
-sudo systemctl start Fooocu.service
+systemctl start Fooocu.service
+
 # reboot

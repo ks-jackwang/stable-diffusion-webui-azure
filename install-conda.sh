@@ -1,4 +1,5 @@
 #!/bin/bash
+# don't need to use sudo to run this script
 
 # Assign the first parameter to ACTIVEUSER
 ACTIVEUSER=$1
@@ -18,6 +19,7 @@ source /anaconda3/bin/activate
 /anaconda3/bin/conda config --set auto_activate_base false
 source ./.bashrc
 
+: << 'COMMENT'
 # Set up the ComfyuI
 cd /github
 mkdir ComfyUI
@@ -59,3 +61,4 @@ sudo systemctl daemon-reload
 sudo systemctl enable stable-diffusion-webui.service
 
 sudo reboot
+COMMENT

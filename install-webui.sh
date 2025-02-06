@@ -1,4 +1,5 @@
 #!/bin/bash
+# use sudo to run this script
 
 # Assign the first parameter to ACTIVEUSER
 ACTIVEUSER=$1
@@ -53,5 +54,5 @@ EOF
 # Reload systemd daemon and enable the service
 systemctl daemon-reload
 systemctl enable stable-diffusion-webui.service
-
+systemctl start stable-diffusion-webui.service
 #reboot

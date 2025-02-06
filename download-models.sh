@@ -1,4 +1,5 @@
 #!/bin/bash
+# don't need to use sudo to run this script
 
 # Assign the first parameter to ACTIVEUSER
 huggingfacetoken=$1
@@ -8,7 +9,7 @@ civitaitoken=$2
 set -x
 export NEEDRESTART_MODE=a 
 
-: << 'COMMENT'
+#: << 'COMMENT'
 # eval "$(/anaconda3/bin/conda shell.bash hook)"
 # conda activate comfyui
 source /github/ComfyUI/venv/bin/activate
@@ -76,7 +77,7 @@ huggingface-cli download black-forest-labs/FLUX.1-Canny-dev-lora flux1-canny-dev
 huggingface-cli download comfyanonymous/hunyuan_dit_comfyui hunyuan_dit_1.2.safetensors --local-dir /github/ComfyUI/models/checkpoints
 
 huggingface-cli logout
-COMMENT
+#COMMENT
 
 ## download the models from civitai
 

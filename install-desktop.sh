@@ -1,8 +1,5 @@
 #!/bin/bash
-
-# Assign the first parameter to ACTIVEUSER
-ACTIVEUSER=$1
-token=$2
+# don't need to use sudo to run this script
 
 # Set echo on
 set -x

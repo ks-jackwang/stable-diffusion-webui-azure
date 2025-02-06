@@ -1,4 +1,5 @@
 #!/bin/bash
+# use sudo to run this script
 
 # Assign the first parameter to ACTIVEUSER
 ACTIVEUSER=$1
@@ -22,8 +23,11 @@ su -c "python3 -m venv /github/ComfyUI/venv && \
 source /github/ComfyUI/venv/bin/activate && \
 pip install --pre torch torchvision torchaudio --index-url https://download.pytorch.org/whl/nightly/cu126 && \
 pip install -r /github/ComfyUI/requirements.txt" $ACTIVEUSER
-
 # pip install torch torchvision torchaudio --extra-index-url https://download.pytorch.org/whl/cu126 && \
+
+# Install ComfyUI Manager
+cd /github/ComfyUI/custom_nodes
+git clone https://github.com/ltdrdata/ComfyUI-Manager comfyui-manager
 
 # Create the systemd service file default port 8188
 sudo cat <<EOF > /etc/systemd/system/ComfyUI.service
@@ -46,6 +50,6 @@ EOF
 # Reload systemd daemon and enable the service
 systemctl daemon-reload
 systemctl enable ComfyUI.service
-sudo systemctl start ComfyUI.service
+systemctl start ComfyUI.service
 
 # reboot

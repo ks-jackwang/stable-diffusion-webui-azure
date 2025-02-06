@@ -98,7 +98,9 @@ wget -O sdxl_vae.safetensors "https://civitai.com/api/download/models/290640?typ
 
 ### NOT FLUX - PONY WORKFLOWS https://civitai.com/models/1101981/not-flux-pony-workflows?modelVersionId=1237889
 # [Workflow] notFLUXPONYWORKFLOWS_v10 (1).zip
-cd /github/ComfyUI/user/default/workflows
+cd /github/ComfyUI/user/default
+mkdir workflows
+cd workflows
 wget -O notFLUXPONYWORKFLOWS_v10.zip "https://civitai.com/api/download/models/1237889?type=Archive&format=Other&token=$civitaitoken"
 
 ##----------------- Download to Run NOT FLUX - PONY WORKFLOWS -----------------##
